@@ -18,4 +18,4 @@ Route::get('/contact-us', function () {
     return view('site.pages.contact-us');
 })->name("contact-us");
 
-Route::get('/{any}', function () { return view('app.AppMount'); })->where('any', '.*');
+Route::get('/{any}', function () { return view('app.AppMount'); })->where('any', '.*')->middleware('auth');

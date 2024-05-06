@@ -22,34 +22,43 @@
                     <h1 class="font-bold text-3xl text-gray-900">LOGIN</h1>
                     <p>Enter your information to login</p>
                 </div>
+                <form method="post" action="{{ route('login') }}">
+                @csrf
                 <div>
-                    
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <label for="" class="text-xs font-semibold px-1">Email</label>
+                            <label for="email" class="text-xs font-semibold px-1">Email</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                <input type="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="johnsmith@example.com">
+                                <input type="email" name="email" id="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="johnsmith@example.com">
                             </div>
+                            @error('email')
+                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-12">
-                            <label for="" class="text-xs font-semibold px-1">Password</label>
+                            <label for="password" class="text-xs font-semibold px-1">Password</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                <input type="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************">
+                                <input type="password" name="password" id="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************">
                             </div>
-                            <a href=""  class="text-xs font-semibold px-1 float-end mt-3">Forget Password</a>
+                            @error('password')
+                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            @enderror
+                            <a href="{{route('password.request')}}" class="text-xs font-semibold px-1 float-end mt-3">Forget Password</a>
                         </div>
                     </div>
-                    
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <button class="block w-full  mx-auto bg-sp-blue hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">LOGIN NOW</button>
+                            <button type="submit" class="block w-full  mx-auto bg-sp-blue hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">LOGIN NOW</button>
                         </div>
                     </div>
                 </div>
+            </form>
+
+
                 <hr class="my-6 border-gray-300 w-full">
 
 <button type="button" class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300">

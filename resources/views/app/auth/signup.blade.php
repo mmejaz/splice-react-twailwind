@@ -22,47 +22,72 @@
                     <h1 class="font-bold text-3xl text-gray-900">REGISTER</h1>
                     <p>Enter your information to register</p>
                 </div>
+                <form method="post" action="{{ route('register') }}">
+                @csrf
                 <div>
                     <div class="flex -mx-3">
                         <div class="w-1/2 px-3 mb-5">
-                            <label for="" class="text-xs font-semibold px-1">First name</label>
+                            <label for="name" class="text-xs font-semibold px-1">First name</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="John">
+                                <input type="text" name="name" id="name" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="John">
                             </div>
+                            @error('name')
+                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="w-1/2 px-3 mb-5">
-                            <label for="" class="text-xs font-semibold px-1">Last name</label>
+                            <label for="last_name" class="text-xs font-semibold px-1">Last name</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Smith">
+                                <input type="text" name="last_name" id="last_name" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Smith">
                             </div>
+                            @error('last_name')
+                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <label for="" class="text-xs font-semibold px-1">Email</label>
+                            <label for="email" class="text-xs font-semibold px-1">Email</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                <input type="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="johnsmith@example.com">
+                                <input type="email" name="email" id="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="johnsmith@example.com">
                             </div>
+                            @error('email')
+                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-12">
-                            <label for="" class="text-xs font-semibold px-1">Password</label>
+                            <label for="password" class="text-xs font-semibold px-1">Password</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                <input type="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************">
+                                <input type="password" name="password" id="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************">
+                            </div>
+                            @error('password')
+                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="flex -mx-3">
+                        <div class="w-full px-3 mb-12">
+                            <label for="password_confirmation" class="text-xs font-semibold px-1">Confirm Password</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************">
                             </div>
                         </div>
                     </div>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <button class="block w-full  mx-auto bg-sp-blue hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER NOW</button>
+                            <button type="submit" class="block w-full mx-auto bg-sp-blue hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER NOW</button>
                         </div>
                     </div>
                 </div>
+            </form>
+
                 <p class="mt-8">Need an account? <a href="{{route('login')}}" class="text-blue-500 hover:text-blue-700 font-semibold">Back to login</a></p>
             </div>
             
