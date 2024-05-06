@@ -1,7 +1,7 @@
 @extends("site.layouts.layout")
 @section("title","splice Packages LLC")
 @section("content")
-     <section id="why-splice-package">
+     <section id="splice-packages-hero-section">
      <div class="bg-white relative pt-40 pb-20 lg:pt-32 dark:bg-gray-900">
          <div class="relative xl:container m-auto px-6 md:px-12 lg:px-6">
             <h1 class="sm:mx-auto sm:w-10/12 md:w-2/3 font-black text-[#13224d] text-4xl text-center sm:text-5xl md:text-6xl lg:w-auto lg:text-left xl:text-5xl dark:text-white">MAIL AND PACKAGE 
@@ -75,7 +75,7 @@
 
                      
                         <div class="p-6 bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 sm:px-20">
-               <span class="text-gray-600 text-lg font-semibold">Main features</span>
+               <span class="text-gray-600 text-lg font-semibold  dark:text-white ">Main features</span>
 
                            <div class="font-bold md:text-4xl dark:text-gray-200 text-sp-orange"> WHY SPLICE PACKAGES? </div>
 
@@ -282,10 +282,10 @@
                <div class="m-auto text-center lg:w-8/12 xl:w-7/12">
                   <h2 class="text-2xl text-white font-bold md:text-4xl">A Tailus Blocks subscription gives you access to our components and more.</h2>
                </div>
-               <div class="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
-                  <div class="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12">
+               <div class="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12 ">
+                  <div class="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12 ">
                      <div aria-hidden="true" class="absolute top-0 w-full h-full rounded-2xl bg-white shadow-xl"></div>
-                     <div class="relative p-6 space-y-6 lg:p-8">
+                     <div class="relative p-6 space-y-6 lg:p-8 ">
                         <h3 class="text-3xl text-gray-700 font-semibold text-center">OUR PRICING</h3>
                         <div class="flex items-center justify-center mt-8">
                            <button @click="
@@ -347,10 +347,10 @@
                         </button>
                      </div>
                   </div>
-                  <div class="relative group md:w-6/12 lg:w-7/12">
-                     <div aria-hidden="true" class="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg"></div>
+                  <div class="relative group md:w-6/12 lg:w-7/12 ">
+                     <div aria-hidden="true" class="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg dark:bg-gray-700 "></div>
                      <div class="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
-                        <ul role="list" class="space-y-4 py-6 text-gray-600">
+                        <ul role="list" class="space-y-4 py-6 text-gray-600 dark:text-white">
                            <li class="space-x-2">
                               <span class="text-sp-orange font-semibold">&check;</span>
                               <span>Free Storage 90 Days</span>

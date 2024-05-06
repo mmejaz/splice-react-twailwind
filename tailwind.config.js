@@ -5,6 +5,7 @@ export default {
         "./resources/**/*.js",
         "./resources/**/*.jsx",
     ],
+    darkMode: "selector",
     theme: {
         extend: {
             colors: {

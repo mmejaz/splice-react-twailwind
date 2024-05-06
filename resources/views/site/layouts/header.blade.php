@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,10 +69,10 @@
                      </div>
                      <div class="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
                         <a href="{{route('register')}}" class="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full focus:before:bg-sky-600/10 dark:focus:before:bg-sky-400/10 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-                        <span class="relative text-sm font-semibold text-primary dark:text-primaryLight">Sign Up</span>                    
+                        <span class="relative text-sm font-semibold text-primary dark:text-white">Sign Up</span>                    
                         </a>
                         <a href="{{route('login')}}" class="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-sp-orange dark:before:bg-sp-orange before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-                        <span class="relative text-sm font-semibold text-white dark:text-gray-900">Login</span>                    
+                        <span class="relative text-sm font-semibold text-white dark:text-white ">Login</span>                    
                         </a>
                      </div>
                   </div>
