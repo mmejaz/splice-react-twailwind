@@ -85,8 +85,9 @@
                            <a class="text-white cursor-pointer hover:text-gray-400">Pricing</a>
                         </li>
                         <li class="mt-3">
-                           <a class="text-white cursor-pointer hover:text-gray-400">FAQ</a>
+                           <a href="{{route('faq')}}" class="text-white cursor-pointer hover:text-gray-400">FAQ</a>
                         </li>
+                        
                      </nav>
                   </div>
                   <div class="w-full px-4 lg:w-1/4 md:w-1/2">

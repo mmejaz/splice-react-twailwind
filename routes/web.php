@@ -18,4 +18,8 @@ Route::get('/contact-us', function () {
     return view('site.pages.contact-us');
 })->name("contact-us");
 
+Route::get('/faq', function () {
+    return view('site.pages.faq');
+})->name("faq");
+
 Route::get('/{any}', function () { return view('app.AppMount'); })->where('any', '.*')->middleware('auth');
