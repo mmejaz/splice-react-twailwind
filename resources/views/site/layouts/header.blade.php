@@ -14,8 +14,7 @@
    <body class="bg-white dark:bg-gray-900">
     <section id="navigation-bar">
     <header>
-    <input type="checkbox" name="hbr" id="hbr" class="hbr peer" hidden aria-hidden="true">
-    <nav class="fixed z-20 w-full bg-white/90 dark:bg-gray-900/80 backdrop-blur navbar shadow-lg shadow-gray-800/5 border-b border-gray-100 dark:border-gray-800 peer-checked:navbar-active dark:shadow-none">
+    <nav class="z-20 w-full bg-white/90 dark:bg-gray-900/80 backdrop-blur navbar shadow-lg shadow-gray-800/5 border-b border-gray-100 dark:border-gray-800 peer-checked:navbar-active dark:shadow-none">
         <div class="xl:container-fluid m-auto px-6 md:px-12 lg:px-6">
             <div class="flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0 lg:py-2">
                 <div class="w-full items-center flex justify-between lg:w-auto">
