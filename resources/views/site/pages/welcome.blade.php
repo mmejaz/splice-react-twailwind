@@ -203,7 +203,7 @@
                   </div>
                </div>
                <div class="grid grid-cols-1 bg-gray-300 bg-opacity-25 dark:bg-gray-800 md:grid-cols-2">
-                  <div class="p-6">
+                  <div class="p-6 sp-border-b sp-border-r">
                      <div class="flex items-center">
                         <img src="https://splicepackages.com/public/presentation/2.gif" alt="shopping" width="50">
                         <div
@@ -232,7 +232,7 @@
                         </a>
                      </div>
                   </div>
-                  <div class="p-6">
+                  <div class="p-6 sp-border-b">
                      <div class="flex items-center">
                         <img src="https://splicepackages.com/public/presentation/3.gif" alt="shopping" width="60">
                         <div
@@ -261,7 +261,7 @@
                         </a>
                      </div>
                   </div>
-                  <div class="p-6">
+                  <div class="p-6 sp-border-b sp-border-r">
                      <div class="flex items-center">
                         <img src="https://splicepackages.com/public/presentation/4.gif" alt="shopping" width="50">
                         <div
@@ -290,7 +290,7 @@
                         </a>
                      </div>
                   </div>
-                  <div class="p-6">
+                  <div class="p-6 sp-border-b">
                      <div class="flex items-center">
                         <img src="https://splicepackages.com/public/presentation/5.gif" alt="shopping" width="50">
                         <div
@@ -319,7 +319,7 @@
                         </a>
                      </div>
                   </div>
-                  <div class="p-6">
+                  <div class="p-6  sp-border-r">
                      <div class="flex items-center">
                         <img src="https://splicepackages.com/public/presentation/6.gif" alt="shopping" width="50">
                         <div
@@ -384,6 +384,7 @@
       </div>
    </main>
 </div>
+</section>
 <section id="priceing" class="bg-cover bg-center bg-no-repeat overflow-x-auto"
    style="background-image: url(https://splicepackages.com/public/presentation/images/Pricing-Tab-Backgroundopt.jpg);">
    <!-- component -->

@@ -74,3 +74,23 @@ p {
     padding: 0 !important;
     box-shadow: 0 6px 8px -9px #999;
 }
+
+.sp-border {
+    border: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-t{
+    border-top: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-b{
+    border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-l{
+    border-left: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-r{
+    border-right: 1px solid rgb(229, 231, 235);
+}

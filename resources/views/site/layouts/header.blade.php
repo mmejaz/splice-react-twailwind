@@ -50,7 +50,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight">
+                                <a href="{{route('business-solution')}}" class="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight">
                                     <span>Business solutions</span>
                                 </a>
                             </li>
