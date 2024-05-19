@@ -26,5 +26,9 @@ Route::get('/business-solution', function () {
     return view('site.pages.business-solution');
 })->name("business-solution");
 
+Route::get('/single-blog', function () {
+    return view('site.pages.single-blog');
+})->name("single-blog");
+
 
 Route::get('/{any}', function () { return view('app.AppMount'); })->where('any', '.*')->middleware('auth');

@@ -319,7 +319,7 @@
                         </a>
                      </div>
                   </div>
-                  <div class="p-6  sp-border-r">
+                  <div class="p-6 sp-border-r">
                      <div class="flex items-center">
                         <img src="https://splicepackages.com/public/presentation/6.gif" alt="shopping" width="50">
                         <div
