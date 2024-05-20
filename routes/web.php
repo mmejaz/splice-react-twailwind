@@ -22,4 +22,6 @@ Route::get('/faq', function () {
     return view('site.pages.faq');
 })->name("faq");
 
+
+
 Route::get('/{any}', function () { return view('app.AppMount'); })->where('any', '.*')->middleware('auth');
