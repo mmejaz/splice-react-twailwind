@@ -79,18 +79,62 @@ p {
     border: 1px solid rgb(229, 231, 235);
 }
 
-.sp-border-t{
+.sp-border-t {
     border-top: 1px solid rgb(229, 231, 235);
 }
 
-.sp-border-b{
+.sp-border-b {
     border-bottom: 1px solid rgb(229, 231, 235);
 }
 
-.sp-border-l{
+.sp-border-l {
     border-left: 1px solid rgb(229, 231, 235);
 }
 
-.sp-border-r{
+.sp-border-r {
     border-right: 1px solid rgb(229, 231, 235);
+}
+
+.ant-card-head {
+    background-color: #d27230 !important;
+    color: #fff !important;
+    text-align: center !important;
+    min-height: 45px !important;
+}
+
+.tab-custom .ant-card-body {
+    padding: 0 !important;
+}
+
+.tab-custom .ant-tabs-nav-wrap {
+    background-color: #da966a !important;
+    color: #fff !important;
+    text-align: center !important;
+    border-top-right-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+}
+
+.ant-tabs-tab-active {
+    background-color: #d27230 !important;
+}
+
+.tab-custom .ant-tabs-nav-list {
+    width: 100% !important;
+}
+.tab-custom .ant-tabs-tab {
+    width: 50% !important;
+}
+
+.tab-custom .ant-tabs-tab-btn {
+    margin-left: 20px !important;
+    color: #fff !important;
+    font-size: 14px !important;
+}
+
+.sp-p-0 {
+    padding: 0px !important;
+}
+
+.custom-table .ant-card-body {
+    padding: 0px !important;
 }
