@@ -4,6 +4,7 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.jsx",
+        "./node_modules/flowbite/**/*.js",
     ],
     darkMode: "selector",
     theme: {
@@ -14,5 +15,5 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [require("flowbite/plugin")],
 };

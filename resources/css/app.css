@@ -1,3 +1,7 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&display=swap");
+
+/* Your existing CSS code */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +12,29 @@
     border: none;
     outline: none;
     box-sizing: border-box;
+}
+
+/* Your existing CSS code */
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.number-font {
+    font-family: Arial, sans-serif; /* You can replace Arial with any other font you prefer */
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 .sidebar {
@@ -40,4 +67,30 @@
     font-size: 1rem;
     position: relative;
     z-index: 9999;
+}
+
+.custom-nav {
+    background-color: #fff !important;
+    padding: 0 !important;
+    box-shadow: 0 6px 8px -9px #999;
+}
+
+.sp-border {
+    border: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-t{
+    border-top: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-b{
+    border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-l{
+    border-left: 1px solid rgb(229, 231, 235);
+}
+
+.sp-border-r{
+    border-right: 1px solid rgb(229, 231, 235);
 }
