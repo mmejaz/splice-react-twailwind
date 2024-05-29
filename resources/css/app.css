@@ -96,7 +96,7 @@ p {
 }
 
 .ant-card-head {
-    background-color: #d27230 !important;
+    background-color: #001529 !important;
     color: #fff !important;
     text-align: center !important;
     min-height: 45px !important;
@@ -107,7 +107,7 @@ p {
 }
 
 .tab-custom .ant-tabs-nav-wrap {
-    background-color: #da966a !important;
+    background-color: #024583 !important;
     color: #fff !important;
     text-align: center !important;
     border-top-right-radius: 12px !important;
@@ -115,7 +115,7 @@ p {
 }
 
 .ant-tabs-tab-active {
-    background-color: #d27230 !important;
+    background-color: #001529 !important;
 }
 
 .tab-custom .ant-tabs-nav-list {
@@ -137,4 +137,9 @@ p {
 
 .custom-table .ant-card-body {
     padding: 0px !important;
+}
+
+.ant-layout-header {
+    background-color: #001529 !important;
+    color: #fff !important;
 }

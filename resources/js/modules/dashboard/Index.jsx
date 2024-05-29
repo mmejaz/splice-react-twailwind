@@ -49,7 +49,7 @@ const Index = () => (
                             <h3 className="mb-1 text-2xl">05</h3>
                             <p>Package Received</p>
                         </div>
-                        <div className="text-4xl bg-sp-orange/20 text-sp-orange rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                        <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
                             <SettingOutlined />
                         </div>
                     </div>
@@ -62,7 +62,7 @@ const Index = () => (
                             <h3 className="mb-1 text-2xl">05</h3>
                             <p>Consolidation</p>
                         </div>
-                        <div className="text-4xl bg-sp-orange/20 text-sp-orange rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                        <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
                             <SettingOutlined />
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const Index = () => (
                             <h3 className="mb-1 text-2xl">05</h3>
                             <p>Shipments</p>
                         </div>
-                        <div className="text-4xl bg-sp-orange/20 text-sp-orange rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                        <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
                             <SettingOutlined />
                         </div>
                     </div>
@@ -88,7 +88,7 @@ const Index = () => (
                             <h3 className="mb-1 text-2xl">05</h3>
                             <p>Wallet</p>
                         </div>
-                        <div className="text-4xl bg-sp-orange/20 text-sp-orange rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                        <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
                             <SettingOutlined />
                         </div>
                     </div>

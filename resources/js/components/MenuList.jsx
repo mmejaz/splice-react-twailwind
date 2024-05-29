@@ -41,8 +41,8 @@ function MenuList() {
                     ],
                 },
                 {
-                    label: "Task",
-                    key: "task",
+                    label: "Incoming Packages",
+                    key: "/incomingPackages",
                     icon: <BarsOutlined />,
                 },
                 {
