@@ -143,3 +143,8 @@ p {
     background-color: #001529 !important;
     color: #fff !important;
 }
+
+.custom-table th {
+    background-color: #001529 !important;
+    color: #fff !important;
+}

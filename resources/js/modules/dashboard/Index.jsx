@@ -173,7 +173,7 @@ const Index = () => (
 
         <Col xs={24} sm={20} md={24} lg={24} className="custom-table mt-5">
             <h3 className="ml-3 text-1xl">Recent Packages</h3>
-            <Card bordered={false} className="cursor-pointer">
+            <Card bordered={false} className="cursor-pointer custom-table">
                 <Table dataSource={dataSource} columns={columns} />;
             </Card>
         </Col>
