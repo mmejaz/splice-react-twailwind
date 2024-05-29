@@ -12,6 +12,7 @@ export default {
             colors: {
                 "sp-blue": "#13224d",
                 "sp-orange": "#d27230",
+                "sp-dark": "#01150c",
             },
         },
     },
