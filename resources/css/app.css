@@ -54,7 +54,7 @@ p {
     align-items: center;
     justify-content: center;
     height: 40px;
-    width: 40px;
+    width: 130px;
     font-size: 1.5rem;
     border-radius: 50%;
     background-color: rgba(28, 17, 41, 0.88);
@@ -147,4 +147,8 @@ p {
 .custom-table th {
     background-color: #001529 !important;
     color: #fff !important;
+}
+
+.ant-menu-vertical .ant-menu-item-group-title{
+    display: none;
 }

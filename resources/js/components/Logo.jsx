@@ -1,9 +1,8 @@
-import { FireFilled } from "@ant-design/icons";
 function Logo() {
     return (
         <div className="logo">
             <div className="logo-icon">
-                <FireFilled />
+            <img src="https://splicepackages.com/public/presentation/logo.svg" alt="Logo" />
             </div>
         </div>
     );

@@ -3,7 +3,11 @@ import { Card, Col, Row, Tabs, Table } from "antd";
 import {
     SettingOutlined,
     AndroidOutlined,
-    AppleOutlined,
+    BlockOutlined,
+    RocketOutlined,
+    DockerOutlined,
+    CodeSandboxOutlined,
+    WalletOutlined 
 } from "@ant-design/icons";
 
 const dataSource = [
@@ -50,7 +54,7 @@ const Index = () => (
                             <p>Package Received</p>
                         </div>
                         <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
-                            <SettingOutlined />
+                            <CodeSandboxOutlined />
                         </div>
                     </div>
                 </Card>
@@ -63,7 +67,7 @@ const Index = () => (
                             <p>Consolidation</p>
                         </div>
                         <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
-                            <SettingOutlined />
+                            <BlockOutlined />
                         </div>
                     </div>
                 </Card>
@@ -76,7 +80,7 @@ const Index = () => (
                             <p>Shipments</p>
                         </div>
                         <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
-                            <SettingOutlined />
+                        <DockerOutlined />
                         </div>
                     </div>
                 </Card>
@@ -89,14 +93,14 @@ const Index = () => (
                             <p>Wallet</p>
                         </div>
                         <div className="text-4xl bg-sp-blue/20 text-sp-blue rounded-[100%] w-[65px] h-[65px] flex justify-center">
-                            <SettingOutlined />
+                            <WalletOutlined />
                         </div>
                     </div>
                 </Card>
             </Col>
         </Row>
         <Row gutter={[16, 16]} className="mt-5">
-            <Col xs={24} sm={12} md={9} lg={9}>
+            <Col xs={24} sm={12} md={12} lg={12}>
                 <Card
                     bordered={false}
                     title="Shipping Calculator"
@@ -105,13 +109,13 @@ const Index = () => (
                     sdfsdfsd
                 </Card>
             </Col>
-            <Col xs={24} sm={12} md={9} lg={9} className="tab-custom">
+            <Col xs={24} sm={12} md={12} lg={12} className="tab-custom">
                 <Card bordered={false} className="p-0">
                     <Tabs defaultActiveKey="1">
                         <Tabs.TabPane
                             tab={
                                 <span>
-                                    <AppleOutlined />
+                                    <RocketOutlined />
                                     &nbsp; Fastest
                                 </span>
                             }
@@ -141,34 +145,7 @@ const Index = () => (
                     </Tabs>
                 </Card>
             </Col>
-            <Col xs={24} sm={12} md={6} lg={6} className="tab-custom">
-                <Card bordered={false} className="p-0">
-                    <Tabs defaultActiveKey="1">
-                        <Tabs.TabPane
-                            tab={<span>Florida Address</span>}
-                            key="1"
-                        >
-                            <Table
-                                dataSource={dataSource}
-                                columns={columns}
-                                pagination={false}
-                            />
-                            ;
-                        </Tabs.TabPane>
-                        <Tabs.TabPane
-                            tab={<span>Delaware Address</span>}
-                            key="2"
-                        >
-                            <Table
-                                dataSource={dataSource}
-                                columns={columns}
-                                pagination={false}
-                            />
-                            ;
-                        </Tabs.TabPane>
-                    </Tabs>
-                </Card>
-            </Col>
+           
         </Row>
 
         <Col xs={24} sm={20} md={24} lg={24} className="custom-table mt-5">
