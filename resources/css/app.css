@@ -27,7 +27,10 @@ h3 {
     font-weight: 700;
     margin-bottom: 1rem;
 }
-
+hr {
+    border: 1px solid #e5e4df; 
+    margin: 10px 0; 
+}
 .number-font {
     font-family: Arial, sans-serif; /* You can replace Arial with any other font you prefer */
 }
@@ -68,7 +71,12 @@ p {
     position: relative;
     z-index: 9999;
 }
-
+:where(.css-dev-only-do-not-override-1okl62o).ant-layout .ant-layout-sider, :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark, :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline {
+    background: #01150c;
+}
+:where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark .ant-menu-item-selected, :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark>.ant-menu .ant-menu-item-selected {
+    background-color: #24352b;
+}
 .custom-nav {
     background-color: #fff !important;
     padding: 0 !important;
@@ -95,8 +103,8 @@ p {
     border-right: 1px solid rgb(229, 231, 235);
 }
 
-.ant-card-head {
-    background-color: #001529 !important;
+.ant-card-head, .calculate-button {
+    background-color: #01150c !important;
     color: #fff !important;
     text-align: center !important;
     min-height: 45px !important;
@@ -107,7 +115,7 @@ p {
 }
 
 .tab-custom .ant-tabs-nav-wrap {
-    background-color: #024583 !important;
+    background-color: #8b958d !important;
     color: #fff !important;
     text-align: center !important;
     border-top-right-radius: 12px !important;
@@ -115,7 +123,7 @@ p {
 }
 
 .ant-tabs-tab-active {
-    background-color: #001529 !important;
+    background-color: #01150c !important;
 }
 
 .tab-custom .ant-tabs-nav-list {
@@ -140,15 +148,18 @@ p {
 }
 
 .ant-layout-header {
-    background-color: #001529 !important;
+    background-color: #01150c !important;
     color: #fff !important;
 }
 
 .custom-table th {
-    background-color: #001529 !important;
+    background-color: #01150c !important;
     color: #fff !important;
 }
 
 .ant-menu-vertical .ant-menu-item-group-title{
     display: none;
+}
+.border-b-stone-400 {
+    border-bottom: 1px solid #d9d9d9 !important;
 }

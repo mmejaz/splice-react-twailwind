@@ -72,7 +72,7 @@ function MenuList() {
         <Menu
             theme="dark"
             items={items}
-            className="menu-bar"
+            className="menu-bar px-2"
             mode="inline"
             onClick={(e) => pageRedirect(e.key)}
             defaultActiveFirst={["/"]}
