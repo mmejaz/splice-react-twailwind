@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Col, Row, Tabs, Table } from "antd";
+import { Card, Col, Row, Tabs, Table, Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 const { Meta } = Card;
 function Index() {
     const dataSource = [
@@ -36,7 +37,10 @@ function Index() {
     ];
     return (
         <>
-            <Card title="Card title" bordered={false}>
+            <Card title="" bordered={false}>
+                <div className="bg-sp-dark rounded-t-lg p-3">
+                    <Button className="flex justify-end"><PlusOutlined className="mt-1"/>Add Incoming Package</Button>
+                </div>
                 <Table dataSource={dataSource} columns={columns} />;
             </Card>
         </>

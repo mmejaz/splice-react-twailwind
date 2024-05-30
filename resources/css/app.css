@@ -28,8 +28,8 @@ h3 {
     margin-bottom: 1rem;
 }
 hr {
-    border: 1px solid #e5e4df; 
-    margin: 10px 0; 
+    border: 1px solid #e5e4df;
+    margin: 10px 0;
 }
 .number-font {
     font-family: Arial, sans-serif; /* You can replace Arial with any other font you prefer */
@@ -71,10 +71,14 @@ p {
     position: relative;
     z-index: 9999;
 }
-:where(.css-dev-only-do-not-override-1okl62o).ant-layout .ant-layout-sider, :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark, :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline {
+:where(.css-dev-only-do-not-override-1okl62o).ant-layout .ant-layout-sider,
+:where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark,
+:where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline,
+ :where(.css-dev-only-do-not-override-1okl62o).ant-tabs .ant-tabs-ink-bar {
     background: #01150c;
 }
-:where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark .ant-menu-item-selected, :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark>.ant-menu .ant-menu-item-selected {
+:where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark .ant-menu-item-selected,
+ :where(.css-dev-only-do-not-override-1okl62o).ant-menu-dark>.ant-menu .ant-menu-item-selected {
     background-color: #24352b;
 }
 .custom-nav {
@@ -162,4 +166,31 @@ p {
 }
 .border-b-stone-400 {
     border-bottom: 1px solid #d9d9d9 !important;
+}
+.vertical-tabs .ant-tabs-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px !important;
+    background-color: #8b958d ;
+    color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.vertical-tabs .ant-tabs-tab-active {
+    color: white !important;
+}
+.vertical-tabs .ant-tabs-tab-btn {
+    display: flex;
+    writing-mode: tb;
+}
+.vertical-tabs .ant-tabs-nav {
+    margin-right: -67px;
+}
+.vertical-tabs .ant-tabs-tab .vertical-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
