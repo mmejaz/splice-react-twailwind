@@ -9,7 +9,7 @@ import {
     CodeSandboxOutlined,
     WalletOutlined,
     DeliveredProcedureOutlined,
-    ShopOutlined 
+    ShopOutlined
 } from "@ant-design/icons";
 
 const dataSource = [
@@ -178,7 +178,7 @@ const Index = () => (
                     </Row>
                     </Form>
 
-                    
+
                 </Card>
             </Col>
             <Col xs={24} sm={12} md={12} lg={8} className="tab-custom">
@@ -245,7 +245,7 @@ const Index = () => (
                     </Tabs>
                 </Card>
             </Col>
-           
+
         </Row>
 
         <Col xs={24} sm={20} md={24} lg={24} className="custom-table mt-5">
