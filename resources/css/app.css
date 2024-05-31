@@ -194,3 +194,7 @@ p {
     align-items: center;
     text-align: center;
 }
+.incoming-packages th{
+    background-color: #24352b !important;
+    color: #fff !important;
+}

@@ -6,42 +6,72 @@ function Index() {
     const dataSource = [
         {
             key: "1",
-            name: "Mike",
-            age: 32,
-            address: "10 Downing Street",
+            package: "314321",
+            vendor: "Amazon",
+            tracking: "9837737837",
+            submitted: "23/03/2023",
+            action: "View"
         },
         {
             key: "2",
-            name: "John",
-            age: 42,
-            address: "10 Downing Street",
+            package: "314321",
+            vendor: "Amazon",
+            tracking: "9837737837",
+            submitted: "23/03/2023",
+            action: "View"
+        },
+        {
+            key: "3",
+            package: "314321",
+            vendor: "Amazon",
+            tracking: "9837737837",
+            submitted: "23/03/2023",
+            action: "View"
+        },
+        {
+            key: "4",
+            package: "314321",
+            vendor: "Amazon",
+            tracking: "9837737837",
+            submitted: "23/03/2023",
+            action: "View"
         },
     ];
 
     const columns = [
         {
-            title: "Name",
-            dataIndex: "name",
-            key: "name",
+            title: "Package ID",
+            dataIndex: "package",
+            key: "package",
         },
         {
-            title: "Age",
-            dataIndex: "age",
-            key: "age",
+            title: "Vendor Name",
+            dataIndex: "vendor",
+            key: "vendor",
         },
         {
-            title: "Address",
-            dataIndex: "address",
-            key: "address",
+            title: "Tracking No",
+            dataIndex: "tracking",
+            key: "tracking",
+        },
+        {
+            title: "Date Submitted",
+            dataIndex: "submitted",
+            key: "submitted",
+        },
+        {
+            title: "Action",
+            dataIndex: "action",
+            key: "action",
         },
     ];
     return (
         <>
             <Card title="" bordered={false}>
-                <div className="bg-sp-dark rounded-t-lg p-3">
-                    <Button className="flex justify-end"><PlusOutlined className="mt-1"/>Add Incoming Package</Button>
+                <div className="flex justify-end bg-sp-dark rounded-t-lg pr-5 p-3">
+                    <Button className=" bg-blue-700 text-white border-0"><PlusOutlined className="mt-1"/>Add Incoming Package</Button>
                 </div>
-                <Table dataSource={dataSource} columns={columns} />;
+                <Table dataSource={dataSource} columns={columns} className="incoming-packages" />;
             </Card>
         </>
     );
