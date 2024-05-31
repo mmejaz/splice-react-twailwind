@@ -1,39 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Row, Tabs, Table, Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+import AddPackageDrawer from "./AddPackageDrawer";
+
 const { Meta } = Card;
+
 function Index() {
+
+    const [drawerVisible, setDrawerVisible] = useState(false);
+
+    const showDrawer = () => {
+        setDrawerVisible(true);
+    };
+
+    const closeDrawer = () => {
+        setDrawerVisible(false);
+    };
+
     const dataSource = [
         {
             key: "1",
-            package: "314321",
+            package: "32987329",
             vendor: "Amazon",
-            tracking: "9837737837",
-            submitted: "23/03/2023",
+            tracking: "2342352345234",
+            submitted: "29/02/2023",
             action: "View"
         },
         {
             key: "2",
-            package: "314321",
+            package: "32987329",
             vendor: "Amazon",
-            tracking: "9837737837",
-            submitted: "23/03/2023",
+            tracking: "2342352345234",
+            submitted: "29/02/2023",
             action: "View"
         },
         {
             key: "3",
-            package: "314321",
+            package: "32987329",
             vendor: "Amazon",
-            tracking: "9837737837",
-            submitted: "23/03/2023",
+            tracking: "2342352345234",
+            submitted: "29/02/2023",
             action: "View"
         },
         {
             key: "4",
-            package: "314321",
+            package: "32987329",
             vendor: "Amazon",
-            tracking: "9837737837",
-            submitted: "23/03/2023",
+            tracking: "2342352345234",
+            submitted: "29/02/2023",
             action: "View"
         },
     ];
@@ -50,7 +64,7 @@ function Index() {
             key: "vendor",
         },
         {
-            title: "Tracking No",
+            title: "Tracking No.",
             dataIndex: "tracking",
             key: "tracking",
         },
@@ -67,12 +81,13 @@ function Index() {
     ];
     return (
         <>
-            <Card title="" bordered={false}>
-                <div className="flex justify-end bg-sp-dark rounded-t-lg pr-5 p-3">
-                    <Button className=" bg-blue-700 text-white border-0"><PlusOutlined className="mt-1"/>Add Incoming Package</Button>
+            <Card title="" bordered={false} className="incoming-table">
+                <div className="flex justify-end bg-sp-dark rounded-t-lg p-3">
+                    <Button className="flex bg-blue-500 text-white border-0 " onClick={showDrawer}><PlusOutlined className="mt-1"/>Add Incoming Package</Button>
                 </div>
-                <Table dataSource={dataSource} columns={columns} className="incoming-packages" />;
+                <Table className="packages-table" dataSource={dataSource} columns={columns} />
             </Card>
+            <AddPackageDrawer visible={drawerVisible} onClose={closeDrawer} />
         </>
     );
 }

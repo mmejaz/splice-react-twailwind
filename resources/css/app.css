@@ -194,7 +194,70 @@ p {
     align-items: center;
     text-align: center;
 }
-.incoming-packages th{
-    background-color: #24352b !important;
+.packages-table th {
+    background-color: rgb(77 90 81) !important;
     color: #fff !important;
+}
+.incoming-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child,
+.drawer-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child  {
+    border-start-start-radius: 0px;
+}
+.incoming-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:last-child,
+.drawer-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:last-child {
+    border-start-end-radius: 0px;
+}
+.drawer-title {
+    display: 'flex';
+    justify-content: 'center';
+    align-items: 'center';
+    background-color: '#f0f2f5';
+    padding: '10px';
+}
+.packages-form .input-border {
+    border-color: #203229 !important;
+}
+.packages-form :where(.css-dev-only-do-not-override-1okl62o).ant-input-outlined:focus {
+    background-color: transparent;
+    border-color: #203229;
+    box-shadow: none;
+}
+.ant-drawer-header {
+    padding: 0px !important;
+}
+.ant-drawer-close {
+    display: none !important;
+}
+.button-submit {
+    background-color: #27a844;
+}
+.button-clear {
+    background-color: #dc3546;
+}
+.select-input {
+    border: 1px solid #203229;
+    box-shadow: none;
+    color: white;
+}
+.ant-select-selection-item {
+    color: white;
+}
+.select-input::placeholder  {
+    color: #2e4038;
+}
+.input-border::placeholder {
+    color: #2e4038;
+}
+.text-note {
+    color: #44524b;
+}
+.drawer-table .ant-table-cell, .drawer-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-tbody .ant-table-row >.ant-table-cell-row-hover {
+    background-color: #01150c;
+    color: white;
+    border: 1px solid #44524b !important;
+}
+.drawer-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+background-color: transparent !important;
+}
+.drawer-table .ant-table-pagination {
+    display: none;
 }
