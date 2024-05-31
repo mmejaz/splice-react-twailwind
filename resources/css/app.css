@@ -225,7 +225,12 @@ p {
     padding: 0px !important;
 }
 .ant-drawer-close {
-    display: none !important;
+    background-color: rgb(1 98 205);
+    color: white !important;
+    padding-left: 15px;
+}
+.ant-drawer-header-title {
+    background-color: rgb(1 98 205);
 }
 .button-submit {
     background-color: #27a844;
