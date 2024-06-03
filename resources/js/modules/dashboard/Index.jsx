@@ -11,8 +11,15 @@ import {
     DeliveredProcedureOutlined,
     ShopOutlined,
     PlusOutlined,
-    EditOutlined
+    EditOutlined,
+    EyeOutlined,
+    DeleteOutlined
 } from "@ant-design/icons";
+import Chart from "react-apexcharts";
+
+const { Option } = Select;
+const { Search } = Input;
+const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const dataSource1 = [
     {
@@ -81,84 +88,112 @@ const columns1 = [
     },
 ];
 
-const dataSource = [
+const dataSource2 = [
     {
         key: "1",
-        shipment: "3567758",
-        tracking: "7674757657",
-        carrier: "Aramex",
-        quantity: "12",
-        custom: "$238.23",
-        delivery: "23/02/2023"
+        sr: "01",
+        sn: "2349224",
+        user: "Ejaz Haneef",
+        email: "ejazhaneef@gmail.com",
+        action: "View",
     },
     {
         key: "2",
-        shipment: "3567758",
-        tracking: "7674757657",
-        carrier: "Aramex",
-        quantity: "12",
-        custom: "$238.23",
-        delivery: "23/02/2023"
+        sr: "02",
+        sn: "2349224",
+        user: "Ejaz Haneef",
+        email: "ejazhaneef@gmail.com",
+        action: "View",
     },
     {
         key: "3",
-        shipment: "3567758",
-        tracking: "7674757657",
-        carrier: "Aramex",
-        quantity: "12",
-        custom: "$238.23",
-        delivery: "23/02/2023"
+        sr: "03",
+        sn: "2349224",
+        user: "Ejaz Haneef",
+        email: "ejazhaneef@gmail.com",
+        action: "View",
     },
     {
         key: "4",
-        shipment: "3567758",
-        tracking: "7674757657",
-        carrier: "Aramex",
-        quantity: "12",
-        custom: "$238.23",
-        delivery: "23/02/2023"
+        sr: "04",
+        sn: "2349224",
+        user: "Ejaz Haneef",
+        email: "ejazhaneef@gmail.com",
+        action: "View",
+    },
+
+];
+
+const columns2 = [
+    {
+        title: "SR No.",
+        dataIndex: "sr",
+        key: "sr",
+    },
+    {
+        title: "SN Number",
+        dataIndex: "sn",
+        key: "sn",
+    },
+    {
+        title: "User Name",
+        dataIndex: "user",
+        key: "user",
+    },
+    {
+        title: "E-mail",
+        dataIndex: "email",
+        key: "email",
+    },
+    {
+        title: "Action",
+        dataIndex: "action",
+        key: "action",
+        render: (text, record) => (
+            <span>
+              <EditOutlined style={{ marginRight: 8 }} />
+              <EyeOutlined style={{ marginRight: 8 }} />
+              <DeleteOutlined />
+            </span>
+          ),
     },
 ];
 
-const columns = [
-    {
-        title: "Shipment ID",
-        dataIndex: "shipment",
-        key: "shipment",
+
+const state = {
+    series: [{
+        name: "Aramex",
+        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
     },
     {
-        title: "Tracking No.",
-        dataIndex: "tracking",
-        key: "tracking",
-    },
-    {
-        title: "Carrier",
-        dataIndex: "carrier",
-        key: "carrier",
-    },
-    {
-        title: "Quantity",
-        dataIndex: "quantity",
-        key: "quantity",
-    },
-    {
-        title: "Custom Value",
-        dataIndex: "custom",
-        key: "custom",
-    },
-    {
-        title: "Delivery Date",
-        dataIndex: "delivery",
-        key: "delivery",
-    },
-];
-const { Option } = Select;
-const { Search } = Input;
-const onSearch = (value, _e, info) => console.log(info?.source, value);
-// const [tabPosition, setTabPosition] = useState('right');
-// const changeTabPosition = (e) => {
-//     setTabPosition(e.target.value);
-//   };
+        name: "FedEx",
+        data: [23, 34, 45, 56, 67, 78, 89, 90, 100]
+    }],
+    options: {
+        chart: {
+            type: 'line',
+            zoom: {
+                enabled: false
+            },
+            toolbar: {
+                show: false
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            curve: 'smooth',
+            width: 3,
+        },
+        colors: ['#1f77b4', '#ff7f0e'],
+        xaxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        }
+    }
+};
+
+
 const Index = () => (
     <>
         <Row gutter={[16, 16]} className="flex justify-start mt-5">
@@ -216,18 +251,18 @@ const Index = () => (
             </Col>
         </Row>
         <Row gutter={[16, 16]} className="mt-5">
-            <Col xs={24} sm={12} md={12} lg={13} >
+            <Col xs={24} sm={12} md={12} lg={14} >
                 <Card className="h-[400px]">
                     <div className="flex justify-between">
                         <h3 className="font-semibold text-lg">Incoming Packages</h3>
-                        <Button className="green-button flex"> <PlusOutlined className="mt-1" /> Add incoming Package</Button>       
+                        <Button className="green-button flex"> <PlusOutlined className="mt-1" /> Add incoming Package</Button>
                     </div>
                     <div className="incoming-table">
                          <Table className="packages-table-dasboard" dataSource={dataSource1} columns={columns1} />
                     </div>
                 </Card>
             </Col>
-            <Col  xs={24} sm={12} md={12} lg={11}>
+            <Col  xs={24} sm={12} md={12} lg={10}>
                 <Card className="shipment-tracking h-[400px]">
                    <h3 className="font-semibold text-lg mb-5">Shipment Tracking</h3>
                     <Search placeholder="Search by tracking no" className="mb-4" onSearch={onSearch} style={{ width: '100%', }}
@@ -253,96 +288,39 @@ const Index = () => (
                 </Card>
             </Col>
         </Row>
-        <Row gutter={16}>
-            <Col span={24}>
-                <h3 className="ml-3 mt-3 font-semibold text-lg">Recent Packages</h3>
-            </Col>
-            <Col xs={24} sm={20} md={24} lg={15} className="custom-table">
-                <Card bordered={false} className="cursor-pointer custom-table ml-2">
-                    <Table dataSource={dataSource} columns={columns} />
-                </Card>
-            </Col>
-            <Col xs={24} sm={12} md={12} lg={8} className="mt-13">
-                <Card
-                    bordered={false}
-                    title="US Warehouse Address"
-                    className="cursor-pointer h-[360px]"
-                >
-                    <Tabs defaultActiveKey="1" tabPosition="right" className="vertical-tabs">
-                        <Tabs.TabPane
-                            tab={
-                                <span className="flex items-center justify-center text-white"> Florida</span>
-                            }
-                            key="1"
-                        >
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Name:</div>
-                                <div>Splice Packages</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Address:</div>
-                                <div>9745 Touchton Road</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Address Line 2:</div>
-                                <div>SP-93028032</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">City:</div>
-                                <div>Jacksonville</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">State:</div>
-                                <div>Florida</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Zip Code:</div>
-                                <div>32248</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Phone:</div>
-                                <div>(904) 656-2822</div>
-                            </div>
+        <Row gutter={16} className="mt-5">
+            <Col xs={24} sm={12} md={12} lg={10}>
+                <Card>
+                    <div className="flex justify-between">
+                        <h3 className="font-semibold text-lg">Yearly Shipments</h3>
+                        <div>
+                        <span>Sort By:</span> <Select className=" border text-black h-[36px] w-[136px]">
+                            <Option value="year" className="text-black" >Current Year</Option>
+                        </Select>
+                        </div>
+                    </div>
+                    <div>
+                        <Chart
+                            options={state.options}
+                            series={state.series}
+                            height= {300}
+                        />
+                    </div>
 
-                        </Tabs.TabPane>
-                        <Tabs.TabPane
-                            tab={
-                                <span className="flex items-center justify-center text-white">Delaware </span>
-                            }
-                            key="2"
-                        >
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Name:</div>
-                                <div>Splice Packages</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Address:</div>
-                                <div>9745 Touchton Road</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Address Line 2:</div>
-                                <div>SP-93028032</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">City:</div>
-                                <div>Jacksonville</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">State:</div>
-                                <div>Florida</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Zip Code:</div>
-                                <div>32248</div>
-                            </div>
-                            <div className="flex mb-3">
-                                <div className="font-bold w-[125px]">Phone:</div>
-                                <div>(904) 656-2822</div>
-                            </div>
-                        </Tabs.TabPane>
-                    </Tabs>
                 </Card>
             </Col>
+            <Col xs={24} sm={12} md={12} lg={14} >
+                <Card className="h-[400px]">
+                    <div className="flex justify-between">
+                        <h3 className="font-semibold text-lg">User List</h3>
+                        <Button className="green-button flex"> <PlusOutlined className="mt-1" /> Add User</Button>
+                    </div>
+                    <div className="incoming-table">
+                         <Table className="packages-table-dasboard" dataSource={dataSource2} columns={columns2} />
+                    </div>
+                </Card>
+            </Col>
+
         </Row>
     </>
 );

@@ -132,7 +132,7 @@ const AddPackageDrawer = ({ visible, onClose }) => {
                             <Input className="bg-transparent border input-border text-white" placeholder="Please enter Vendor Name" />
                         </Form.Item>
                     </Col>
-                    <Col span={12}>
+                    <Col span={12} className="drawer-select">
                         <Form.Item
                             name="warehouse"
                             label={<span className="text-white">Warehouse</span>}

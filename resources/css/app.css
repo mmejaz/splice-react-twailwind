@@ -248,7 +248,7 @@ p {
     box-shadow: none;
     color: white;
 }
-.ant-select-selection-item {
+.drawer-select .ant-select-selection-item {
     color: white;
 }
 .select-input::placeholder  {
