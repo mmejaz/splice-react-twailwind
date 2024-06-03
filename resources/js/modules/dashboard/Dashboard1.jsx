@@ -9,77 +9,8 @@ import {
     CodeSandboxOutlined,
     WalletOutlined,
     DeliveredProcedureOutlined,
-    ShopOutlined,
-    PlusOutlined,
-    EditOutlined
+    ShopOutlined
 } from "@ant-design/icons";
-
-const dataSource1 = [
-    {
-        key: "1",
-        package: "324739",
-        vendor: "Amazon",
-        tracking: "2978687678979",
-        submitted: "23/02/2023",
-        action: "View",
-    },
-    {
-        key: "2",
-        package: "324739",
-        vendor: "Amazon",
-        tracking: "2978687678979",
-        submitted: "23/02/2023",
-        action: "View",
-    },
-    {
-        key: "3",
-        package: "324739",
-        vendor: "Amazon",
-        tracking: "2978687678979",
-        submitted: "23/02/2023",
-        action: "View",
-    },
-    {
-        key: "4",
-        package: "324739",
-        vendor: "Amazon",
-        tracking: "2978687678979",
-        submitted: "23/02/2023",
-        action: "View",
-    },
-
-];
-
-const columns1 = [
-    {
-        title: "Package ID",
-        dataIndex: "package",
-        key: "package",
-    },
-    {
-        title: "Vendor Name",
-        dataIndex: "vendor",
-        key: "vendor",
-    },
-    {
-        title: "Tracking No.",
-        dataIndex: "tracking",
-        key: "tracking",
-    },
-    {
-        title: "Date Submitted",
-        dataIndex: "submitted",
-        key: "submitted",
-    },
-    {
-        title: "Action",
-        dataIndex: "action",
-        key: "action",
-        render: (text, record) => (
-            <EditOutlined />
-        ),
-    },
-];
 
 const dataSource = [
     {
@@ -153,8 +84,6 @@ const columns = [
     },
 ];
 const { Option } = Select;
-const { Search } = Input;
-const onSearch = (value, _e, info) => console.log(info?.source, value);
 // const [tabPosition, setTabPosition] = useState('right');
 // const changeTabPosition = (e) => {
 //     setTabPosition(e.target.value);
@@ -217,39 +146,147 @@ const Index = () => (
         </Row>
         <Row gutter={[16, 16]} className="mt-5">
             <Col xs={24} sm={12} md={12} lg={13} >
-                <Card className="h-[400px]">
-                    <div className="flex justify-between">
-                        <h3 className="font-semibold text-lg">Incoming Packages</h3>
-                        <Button className="green-button flex"> <PlusOutlined className="mt-1" /> Add incoming Package</Button>       
-                    </div>
-                    <div className="incoming-table">
-                         <Table className="packages-table-dasboard" dataSource={dataSource1} columns={columns1} />
-                    </div>
+                <Card
+                    bordered={false}
+                    title="Shipping Calculator"
+                    className="cursor-pointer mx-2 h-[350px]"
+                >
+                    <Form layout="vertical">
+                    <Row gutter={16}>
+                        <Col span={8}>
+                            <Form.Item label="Destination Country" className="font-bold">
+                                <Select bordered={false} className="border-b-stone-400 rounded-none h-[32px]" >
+                                    <Option value="can">Canada</Option>
+                                    <Option value="aus">Australia</Option>
+                                    <Option value="pak">Pakistan</Option>
+                                </Select>
+                            </Form.Item>
+                        </Col>
+                        <Col span={8}>
+                            <Form.Item label="Destination City" className="font-bold">
+                                <Input bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={8}>
+                            <Form.Item label="Zip Code" className="font-bold">
+                                <Input bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={16}>
+                            <Form.Item label="Dimensional Weight (inches)*" className="font-bold">
+                                <Input placeholder="Length  x  Width  x  Height"  bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={8}>
+                            <Form.Item label="Weight (lbs)*" className="font-bold">
+                                <Input  bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={24}>
+                            <div>
+                                <Button className="w-[100%] rounded-none text-lg font-medium text-white calculate-button mt-4">Calculate Shipping</Button>
+                            </div>
+                        </Col>
+                    </Row>
+                    </Form>
                 </Card>
             </Col>
-            <Col  xs={24} sm={12} md={12} lg={11}>
-                <Card className="shipment-tracking h-[400px]">
-                   <h3 className="font-semibold text-lg mb-5">Shipment Tracking</h3>
-                    <Search placeholder="Search by tracking no" className="mb-4" onSearch={onSearch} style={{ width: '100%', }}
-                    />
-                    <div className="flex justify-between">
-                        <div className="mt-5">
-                            <span>Showing Result for</span> <br />
-                            <span className="text-xl font-semibold">1z657exhkW90890fs</span>
+            <Col xs={24} sm={12} md={12} lg={11} className="tab-custom">
+                <Card bordered={false} className="p-0 h-[350px]">
+                    <Tabs defaultActiveKey="1">
+                        <Tabs.TabPane
+                            tab={
+                                <span className="flex items-center justify-center">
+                                    <RocketOutlined  className="text-center"/>
+                                    &nbsp; Fastest
+                                </span>
+                            }
+                            key="1"
+                        >
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
                         </div>
-                        <img className="mt-3" src="../.../../img/dhl-logo.svg" />
-                    </div>
-                    <div className="mt-5">
-                        <span>Delivered on:</span> <br />
-                        <span className="">wednesday, February 22 at 15:20 at Front door</span>
-                    </div>
-                    <div className="flex justify-between mt-5">
-                        <div className="">
-                            <span>Delivered To:</span> <br />
-                            <span className="">JACKSONVILLE, FL US</span>
+                        <hr />
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
                         </div>
-                        <div className="mt-5">View Details</div>
-                    </div>
+                        <hr />
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
+                        </div>
+                        <hr />
+                        </Tabs.TabPane>
+                        <Tabs.TabPane
+                            tab={
+                                <span>
+                                    <AndroidOutlined />
+                                    &nbsp; Cheapest
+                                </span>
+                            }
+                            key="2"
+                        >
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                        </Tabs.TabPane>
+                    </Tabs>
                 </Card>
             </Col>
         </Row>
@@ -259,7 +296,7 @@ const Index = () => (
             </Col>
             <Col xs={24} sm={20} md={24} lg={15} className="custom-table">
                 <Card bordered={false} className="cursor-pointer custom-table ml-2">
-                    <Table dataSource={dataSource} columns={columns} />
+                    <Table dataSource={dataSource} columns={columns} />;
                 </Card>
             </Col>
             <Col xs={24} sm={12} md={12} lg={8} className="mt-13">

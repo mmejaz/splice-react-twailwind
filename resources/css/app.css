@@ -156,7 +156,7 @@ p {
     color: #fff !important;
 }
 
-.custom-table th {
+.custom-table th, .green-button {
     background-color: #01150c !important;
     color: #fff !important;
 }
@@ -198,6 +198,11 @@ p {
     background-color: rgb(77 90 81) !important;
     color: #fff !important;
 }
+.packages-table-dasboard th {
+    background-color: #01150c !important;
+    color: #fff !important;
+}
+
 .incoming-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child,
 .drawer-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child  {
     border-start-start-radius: 0px;
@@ -265,4 +270,7 @@ background-color: transparent !important;
 }
 .drawer-table .ant-table-pagination {
     display: none;
+}
+.shipment-tracking .ant-input-search-button {
+    display: none !important;
 }
