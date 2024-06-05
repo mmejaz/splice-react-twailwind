@@ -128,6 +128,7 @@ p {
 
 .ant-tabs-tab-active {
     background-color: #01150c !important;
+    color: white !important;
 }
 
 .tab-custom .ant-tabs-nav-list {
@@ -211,6 +212,9 @@ p {
 .drawer-table :where(.css-dev-only-do-not-override-1okl62o).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:last-child {
     border-start-end-radius: 0px;
 }
+:where(.css-dev-only-do-not-override-1okl62o).ant-card-bordered {
+    border: 1px solid #b2b4ae;
+}
 .drawer-title {
     display: 'flex';
     justify-content: 'center';
@@ -273,4 +277,18 @@ background-color: transparent !important;
 }
 .shipment-tracking .ant-input-search-button {
     display: none !important;
+}
+:where(.css-dev-only-do-not-override-1okl62o).ant-tabs .ant-tabs-tab {
+    width: 160px !important;
+    display: flex;
+    justify-content: center;
+}
+:where(.css-dev-only-do-not-override-1okl62o).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: white;
+}
+.profile-card :where(.css-dev-only-do-not-override-1okl62o).ant-card .ant-card-actions>li {
+    margin: 0px !important;
+}
+.general-card .ant-card-head-wrapper {
+    text-align: left;
 }
