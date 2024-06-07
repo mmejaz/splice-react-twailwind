@@ -1,209 +1,387 @@
-import React, { useState } from "react";
-import { Card, Col, Row, Tabs, Form, Input, Select, Button, message, Upload } from "antd";
+import React from "react";
+import { Card, Col, Row, Tabs, Table,Form, Input, Select, Button } from "antd";
 import {
     SettingOutlined,
-    UserOutlined,
-    LockOutlined,
-    UploadOutlined,
-    CameraFilled
+    AndroidOutlined,
+    BlockOutlined,
+    RocketOutlined,
+    DockerOutlined,
+    CodeSandboxOutlined,
+    WalletOutlined,
+    DeliveredProcedureOutlined,
+    ShopOutlined
 } from "@ant-design/icons";
 
+const dataSource = [
+    {
+        key: "1",
+        shipment: "3567758",
+        tracking: "7674757657",
+        carrier: "Aramex",
+        quantity: "12",
+        custom: "$238.23",
+        delivery: "23/02/2023"
+    },
+    {
+        key: "2",
+        shipment: "3567758",
+        tracking: "7674757657",
+        carrier: "Aramex",
+        quantity: "12",
+        custom: "$238.23",
+        delivery: "23/02/2023"
+    },
+    {
+        key: "3",
+        shipment: "3567758",
+        tracking: "7674757657",
+        carrier: "Aramex",
+        quantity: "12",
+        custom: "$238.23",
+        delivery: "23/02/2023"
+    },
+    {
+        key: "4",
+        shipment: "3567758",
+        tracking: "7674757657",
+        carrier: "Aramex",
+        quantity: "12",
+        custom: "$238.23",
+        delivery: "23/02/2023"
+    },
+];
+
+const columns = [
+    {
+        title: "Shipment ID",
+        dataIndex: "shipment",
+        key: "shipment",
+    },
+    {
+        title: "Tracking No.",
+        dataIndex: "tracking",
+        key: "tracking",
+    },
+    {
+        title: "Carrier",
+        dataIndex: "carrier",
+        key: "carrier",
+    },
+    {
+        title: "Quantity",
+        dataIndex: "quantity",
+        key: "quantity",
+    },
+    {
+        title: "Custom Value",
+        dataIndex: "custom",
+        key: "custom",
+    },
+    {
+        title: "Delivery Date",
+        dataIndex: "delivery",
+        key: "delivery",
+    },
+];
 const { Option } = Select;
-
-const Index = () => {
-  const [activeKey, setActiveKey] = useState("1");
-
-  const onChange = (key) => {
-      setActiveKey(key);
-      console.log(key);
-  };
-
-  const props = {
-    name: 'file',
-    action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
-    headers: {
-      authorization: 'authorization-text',
-    },
-    onChange(info) {
-      if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
-  };
-
-    return (
-        <>
-            <Row gutter={[16, 16]} className="flex justify-start mt-5">
-                <Col xs={24} sm={24} md={24} lg={24}>
-                    <h3 className="mb-1 ml-2 text-lg">Profile</h3>
-                </Col>
-            </Row>
-
-            <Row gutter={[16, 16]} className="flex justify-start mt-5">
-                <Col xs={24} sm={12} md={24} lg={24} className="ml-2">
-                    <Tabs defaultActiveKey="1" onChange={onChange}>
+// const [tabPosition, setTabPosition] = useState('right');
+// const changeTabPosition = (e) => {
+//     setTabPosition(e.target.value);
+//   };
+const Index = () => (
+    <>
+        <Row gutter={[16, 16]} className="flex justify-start mt-5">
+            <Col xs={24} sm={12} md={12} lg={6}>
+                <Card bordered={false} className="cursor-pointer mx-2">
+                    <div className="flex justify-between">
+                        <div>
+                            <h3 className="mb-1 text-2xl">05</h3>
+                            <p>Package Received</p>
+                        </div>
+                        <div className="text-4xl bg-sp-dark/20 text-sp-dark rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                            <CodeSandboxOutlined />
+                        </div>
+                    </div>
+                </Card>
+            </Col>
+            <Col xs={24} sm={12} md={12} lg={6}>
+                <Card bordered={false} className="cursor-pointer mx-2">
+                    <div className="flex justify-between">
+                        <div>
+                            <h3 className="mb-1 text-2xl">23</h3>
+                            <p>Consolidation</p>
+                        </div>
+                        <div className="text-4xl bg-sp-dark/20 text-sp-dark rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                            <BlockOutlined />
+                        </div>
+                    </div>
+                </Card>
+            </Col>
+            <Col xs={24} sm={12} md={12} lg={6}>
+                <Card bordered={false} className="cursor-pointer mx-2">
+                    <div className="flex justify-between">
+                        <div>
+                            <h3 className="mb-1 text-2xl">05</h3>
+                            <p>Shipments</p>
+                        </div>
+                        <div className="text-4xl bg-sp-dark/20 text-sp-dark rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                        <DockerOutlined />
+                        </div>
+                    </div>
+                </Card>
+            </Col>
+            <Col xs={24} sm={12} md={12} lg={6}>
+                <Card bordered={false} className="cursor-pointer mx-2">
+                    <div className="flex justify-between">
+                        <div>
+                            <h3 className="mb-1 text-2xl">$324</h3>
+                            <p>Wallet</p>
+                        </div>
+                        <div className="text-4xl bg-sp-dark/20 text-sp-dark rounded-[100%] w-[65px] h-[65px] flex justify-center">
+                            <WalletOutlined />
+                        </div>
+                    </div>
+                </Card>
+            </Col>
+        </Row>
+        <Row gutter={[16, 16]} className="mt-5">
+            <Col xs={24} sm={12} md={12} lg={13} >
+                <Card
+                    bordered={false}
+                    title="Shipping Calculator"
+                    className="cursor-pointer mx-2 h-[350px]"
+                >
+                    <Form layout="vertical">
+                    <Row gutter={16}>
+                        <Col span={8}>
+                            <Form.Item label="Destination Country" className="font-bold">
+                                <Select bordered={false} className="border-b-stone-400 rounded-none h-[32px]" >
+                                    <Option value="can">Canada</Option>
+                                    <Option value="aus">Australia</Option>
+                                    <Option value="pak">Pakistan</Option>
+                                </Select>
+                            </Form.Item>
+                        </Col>
+                        <Col span={8}>
+                            <Form.Item label="Destination City" className="font-bold">
+                                <Input bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={8}>
+                            <Form.Item label="Zip Code" className="font-bold">
+                                <Input bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={16}>
+                            <Form.Item label="Dimensional Weight (inches)*" className="font-bold">
+                                <Input placeholder="Length  x  Width  x  Height"  bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={8}>
+                            <Form.Item label="Weight (lbs)*" className="font-bold">
+                                <Input  bordered={false} className="border-b-stone-400 rounded-none h-[32px]" />
+                            </Form.Item>
+                        </Col>
+                        <Col span={24}>
+                            <div>
+                                <Button className="w-[100%] rounded-none text-lg font-medium text-white calculate-button mt-4">Calculate Shipping</Button>
+                            </div>
+                        </Col>
+                    </Row>
+                    </Form>
+                </Card>
+            </Col>
+            <Col xs={24} sm={12} md={12} lg={11} className="tab-custom">
+                <Card bordered={false} className="p-0 h-[350px]">
+                    <Tabs defaultActiveKey="1">
                         <Tabs.TabPane
                             tab={
-                                <span>
-                                    <UserOutlined /> Profile
+                                <span className="flex items-center justify-center">
+                                    <RocketOutlined  className="text-center"/>
+                                    &nbsp; Fastest
                                 </span>
                             }
                             key="1"
-                        />
+                        >
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between mx-3">
+                            <img src="../.../../img/dhl-logo.svg" />
+                            <div>
+                                <span>Economy Parcel</span><br />
+                                <span>2 - 5 Days</span>
+                            </div>
+                            <div className="mt-3 font-semibold">$67.21</div>
+                        </div>
+                        <hr />
+                        </Tabs.TabPane>
                         <Tabs.TabPane
                             tab={
                                 <span>
-                                    <SettingOutlined /> Account Settings
+                                    <AndroidOutlined />
+                                    &nbsp; Cheapest
                                 </span>
                             }
                             key="2"
-                        />
-                        <Tabs.TabPane
-                            tab={
-                                <span>
-                                    <LockOutlined /> Password
-                                </span>
-                            }
-                            key="3"
-                        />
-                        <Tabs.TabPane
-                            tab={
-                                <span>
-                                    <UserOutlined /> Role
-                                </span>
-                            }
-                            key="4"
-                        />
-                        <Tabs.TabPane
-                            tab={
-                                <span>
-                                    <SettingOutlined /> Settings
-                                </span>
-                            }
-                            key="5"
-                        />
+                        >
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                            <div className="flex justify-between mx-3">
+                                <img src="../.../../img/dhl-logo.svg" />
+                                <div>
+                                    <span>Economy Parcel</span><br />
+                                    <span>2 - 5 Days</span>
+                                </div>
+                                <div className="mt-3 font-semibold">$67.21</div>
+                            </div>
+                            <hr />
+                        </Tabs.TabPane>
                     </Tabs>
-                </Col>
-            </Row>
+                </Card>
+            </Col>
+        </Row>
+        <Row gutter={16}>
+            <Col span={24}>
+                <h3 className="ml-3 mt-3 font-semibold text-lg">Recent Packages</h3>
+            </Col>
+            <Col xs={24} sm={20} md={24} lg={15} className="custom-table">
+                <Card bordered={false} className="cursor-pointer custom-table ml-2">
+                    <Table dataSource={dataSource} columns={columns} />;
+                </Card>
+            </Col>
+            <Col xs={24} sm={12} md={12} lg={8} className="mt-13">
+                <Card
+                    bordered={false}
+                    title="US Warehouse Address"
+                    className="cursor-pointer h-[360px]"
+                >
+                    <Tabs defaultActiveKey="1" tabPosition="right" className="vertical-tabs">
+                        <Tabs.TabPane
+                            tab={
+                                <span className="flex items-center justify-center text-white"> Florida</span>
+                            }
+                            key="1"
+                        >
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Name:</div>
+                                <div>Splice Packages</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Address:</div>
+                                <div>9745 Touchton Road</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Address Line 2:</div>
+                                <div>SP-93028032</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">City:</div>
+                                <div>Jacksonville</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">State:</div>
+                                <div>Florida</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Zip Code:</div>
+                                <div>32248</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Phone:</div>
+                                <div>(904) 656-2822</div>
+                            </div>
 
-            <Row gutter={[16, 16]} className="flex justify-start mt-5">
-                <Col xs={24} sm={24} md={24} lg={24} className="ml-2">
-                    {activeKey === "1" && (
-                        <Row gutter={16}>
-                          <Col xs={24} sm={24} md={24} lg={6} className="profile-card">
-                            <Card
-                                actions={[
-                                  <div className="bg-sp-dark text-white pb-2">
-                                    <h3 className="flex justify-center pt-2">Emily Davis</h3>
-                                    <h5 className="flex justify-center" style={{marginTop: "-20px"}}>Admin</h5>
-                                  </div>
-                                ]}
-                            >
-                              <div className="flex justify-center">
-                                <img src="../.../../img/thumb-6.jpg" className="w-[100px] h-[100px] rounded-full mb-3 mt-3" />
-                              </div>
-                              <div className="flex justify-center" style={{marginTop: "-30px"}}>
-                              <CameraFilled className="w-[50] h-[50] bg-black text-white p-2 rounded-full" />
-                              </div>
-                            </Card>
-                          </Col>
-                          <Col xs={24} sm={24} md={24} lg={18}>
-                            <Card>
-                                <Row gutter={16} className="mt-4 mb-2">
-                                  <Col span={12}>
-                                      <div className="font-semibold mb-2">Username</div>
-                                      <Input className="rounded" placeholder="Emily Davis" />
-                                  </Col>
-                                  <Col span={12}>
-                                      <div className="font-semibold mb-2">Email Address</div>
-                                      <Input className="rounded" placeholder="Emili_davis@gmail.com" />
-                                  </Col>
-                                </Row>
-                                <Row gutter={16} className="mt-5 mb-1">
-                                  <Col span={12}>
-                                      <div className="font-semibold mb-2">Phone No.</div>
-                                      <Input className="rounded" placeholder="(920 765-7576)" />
-                                  </Col>
-                                  <Col span={12}>
-                                      <div className="font-semibold mb-2">Account Type</div>
-                                      <Input className="rounded" placeholder="Admin" />
-                                  </Col>
-                                </Row>
-                            </Card>
-                          </Col>
-                        </Row>
-                    )}
-                    {activeKey === "2" && (
-                        <Row gutter={16}>
-                          <Col xs={24} sm={24} md={24} lg={24} className="general-card">
-                            <Card
-                              bordered={false}
-                              title="General Settings"
-                              className="h-[360px]"
-                            >
-                              <Row gutter={16}>
-                                <Col span={6}>
-                                    <div className="font-semibold mb-2">Company Logo</div>
-                                    <Input className="rounded" placeholder="Splice logo.jpeg" />
-                                </Col>
-                                <Col span={6}>
-                                    <div className="font-semibold mb-2">Contact Email</div>
-                                    <Input className="rounded" placeholder="support@gmail.com" />
-                                </Col>
-                                <Col span={6}>
-                                    <div className="font-semibold mb-2">Phone No.</div>
-                                    <Input className="rounded" placeholder="+1 (904) 783-3283" />
-                                </Col>
-                                <Col span={6}>
-                                    <div className="font-semibold mb-2">Whatsapp No.</div>
-                                    <Input className="rounded" placeholder="+1 (904) 783-3283" />
-                                </Col>
-                              </Row>
-                              <Row gutter={16} className="mt-5">
-                                <Col span={12}>
-                                      <div className="font-semibold mb-2">Business Hours</div>
-                                      <Input className="rounded" placeholder="Business hours: Mon to Fri 9:00 Am - 6:00 Pm US EST" />
-                                  </Col>
-                              </Row>
-                            </Card>
-                          </Col>
-                        </Row>
-                    )}
-                    {activeKey === "3" && (
-                        <Form layout="vertical">
-                            <Form.Item label="Current Password" name="currentPassword">
-                                <Input.Password placeholder="Enter current password" />
-                            </Form.Item>
-                            <Form.Item label="New Password" name="newPassword">
-                                <Input.Password placeholder="Enter new password" />
-                            </Form.Item>
-                            <Form.Item label="Confirm Password" name="confirmPassword">
-                                <Input.Password placeholder="Confirm new password" />
-                            </Form.Item>
-                            <Form.Item>
-                                <Button type="primary">Change Password</Button>
-                            </Form.Item>
-                        </Form>
-                    )}
-                    {activeKey === "4" && (
-                        <div>
-                            <p>Manage your role and permissions here.</p>
-                        </div>
-                    )}
-                    {activeKey === "5" && (
-                        <div>
-                            <p>General application settings.</p>
-                        </div>
-                    )}
-                </Col>
-            </Row>
-        </>
-    );
-};
+                        </Tabs.TabPane>
+                        <Tabs.TabPane
+                            tab={
+                                <span className="flex items-center justify-center text-white">Delaware </span>
+                            }
+                            key="2"
+                        >
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Name:</div>
+                                <div>Splice Packages</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Address:</div>
+                                <div>9745 Touchton Road</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Address Line 2:</div>
+                                <div>SP-93028032</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">City:</div>
+                                <div>Jacksonville</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">State:</div>
+                                <div>Florida</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Zip Code:</div>
+                                <div>32248</div>
+                            </div>
+                            <div className="flex mb-3">
+                                <div className="font-bold w-[125px]">Phone:</div>
+                                <div>(904) 656-2822</div>
+                            </div>
+                        </Tabs.TabPane>
+                    </Tabs>
+                </Card>
+            </Col>
+        </Row>
+    </>
+);
 
 export default Index;

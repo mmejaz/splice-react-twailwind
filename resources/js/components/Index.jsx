@@ -17,7 +17,7 @@ function Index() {
     } = theme.useToken();
 
     return (
-        <Layout style={{ minHeight: "100%" }}>
+        <Layout style={{ minHeight: "100%", maxWidth: "99.5%" }}>
             <Sider collapsed={collapsed} className="sidebar" width={250}>
                 <Logo></Logo>
                 <MenuList></MenuList>

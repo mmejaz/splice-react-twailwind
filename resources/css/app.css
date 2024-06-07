@@ -278,7 +278,7 @@ background-color: transparent !important;
 .shipment-tracking .ant-input-search-button {
     display: none !important;
 }
-:where(.css-dev-only-do-not-override-1okl62o).ant-tabs .ant-tabs-tab {
+.profile-tab :where(.css-dev-only-do-not-override-1okl62o).ant-tabs .ant-tabs-tab {
     width: 160px !important;
     display: flex;
     justify-content: center;
@@ -291,4 +291,13 @@ background-color: transparent !important;
 }
 .general-card .ant-card-head-wrapper {
     text-align: left;
+}
+:where(.css-dev-only-do-not-override-1okl62o).ant-switch.ant-switch-checked {
+    background: #01150c;
+}
+.upload-file .ant-upload-select {
+    width: 100%;
+}
+:where(.css-dev-only-do-not-override-1okl62o).ant-tabs-top >.ant-tabs-nav::before {
+    border-bottom: 1px solid #01150c;
 }

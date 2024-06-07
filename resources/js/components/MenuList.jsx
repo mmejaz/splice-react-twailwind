@@ -5,6 +5,7 @@ import {
     AreaChartOutlined,
     SettingOutlined,
     BarsOutlined,
+    UserOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
@@ -24,6 +25,21 @@ function MenuList() {
                     label: "Home",
                     key: "/home",
                     icon: <HomeFilled />,
+                },
+                {
+                    label: "Profile",
+                    key: "/profile",
+                    icon: <UserOutlined />,
+                },
+                {
+                    label: "Shipping Calculator",
+                    key: "/shipping",
+                    icon: <PayCircleOutlined />,
+                },
+                {
+                    label: "Warehouse",
+                    key: "/Warehouse",
+                    icon: <AreaChartOutlined />,
                 },
                 {
                     label: "Activity",
@@ -75,7 +91,8 @@ function MenuList() {
             className="menu-bar px-2"
             mode="inline"
             onClick={(e) => pageRedirect(e.key)}
-            defaultActiveFirst={["/"]}
+            defaultSelectedKeys={["/home"]}
+            defaultActiveFirst={["/home"]}
         ></Menu>
     );
 }
